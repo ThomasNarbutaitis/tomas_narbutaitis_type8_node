@@ -1,5 +1,6 @@
 const express = require('express');
 const { getUsersDb, saveUserDb } = require('../model/userModel');
+const { hashPassword } = require('../utils/helpers');
 
 const userRoutes = express.Router();
 
@@ -16,9 +17,14 @@ userRoutes.get('/users', async (req, res) => {
 
 // POST register new user
 userRoutes.post('/register', async (req, res) => {
-  const { full_name, email, password } = req.body;
+  const newUser = req.body;
+  newUser.password = hashPassword(newUser.password);
   try {
-    const saveResult = await saveUserDb(full_name, email, password);
+    const saveResult = await saveUserDb(
+      newUser.full_name,
+      newUser.email,
+      newUser.password
+    );
     if (saveResult.affectedRows === 1) {
       res.sendStatus(201);
       return;

@@ -4,8 +4,8 @@ POST http://localhost:3007/register
 Content-Type: application/json
 
 {
-  "full_name": "bob smith",
-  "email": "bob@bond.com",
-  "password": "bob1"
+  "full_name": "rob smith",
+  "email": "rob@smith.com",
+  "password": "rob1"
 }
 ###
