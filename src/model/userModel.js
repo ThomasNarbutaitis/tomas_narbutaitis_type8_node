@@ -25,7 +25,13 @@ function saveUserDb(full_name, email, password) {
   return executeDb(sql, [full_name, email, password]);
 }
 
+function findUserByEmail(email) {
+  const sql = 'SELECT * FROM users WHERE email = ?';
+  return executeDb(sql, [email]);
+}
+
 module.exports = {
   getUsersDb,
   saveUserDb,
+  findUserByEmail,
 };

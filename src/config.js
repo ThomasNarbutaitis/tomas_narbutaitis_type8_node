@@ -8,8 +8,10 @@ const dbConfig = {
   port: process.env.DB_PORT,
   database: process.env.DB_DB,
 };
+const jwtSecret = process.env.JWT_SECRET;
 
 module.exports = {
   PORT,
   dbConfig,
+  jwtSecret,
 };
