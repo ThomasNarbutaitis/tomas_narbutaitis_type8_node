@@ -1,4 +1,5 @@
 const express = require('express');
+const { validateUser } = require('../middleware');
 const { getUsersDb, saveUserDb } = require('../model/userModel');
 const { hashPassword } = require('../utils/helpers');
 
@@ -16,14 +17,14 @@ userRoutes.get('/users', async (req, res) => {
 });
 
 // POST register new user
-userRoutes.post('/register', async (req, res) => {
+userRoutes.post('/register', validateUser, async (req, res) => {
   const newUser = req.body;
   newUser.password = hashPassword(newUser.password);
   try {
     const saveResult = await saveUserDb(
       newUser.full_name,
       newUser.email,
-      newUser.password
+      newUser.password,
     );
     if (saveResult.affectedRows === 1) {
       res.sendStatus(201);

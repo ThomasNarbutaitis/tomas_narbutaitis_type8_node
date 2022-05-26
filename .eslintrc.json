@@ -11,7 +11,7 @@
   },
   "rules": {
     "no-console": "off",
-    "linebreak-style": "off",
+    "linebreak-style": 0,
     "import/extensions": "off",
     "camelcase": "off"
   }
