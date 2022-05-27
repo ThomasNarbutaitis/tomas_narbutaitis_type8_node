@@ -16,8 +16,7 @@ async function executeDb(sql, dataToDbArr = []) {
 }
 
 function saveBillDb(group_id, amount, description) {
-  const sql =
-    'INSERT INTO bills (group_id, amount, description) VALUES (?, ?, ?)';
+  const sql = 'INSERT INTO bills (group_id, amount, description) VALUES (?, ?, ?)';
   return executeDb(sql, [group_id, amount, description]);
 }
 

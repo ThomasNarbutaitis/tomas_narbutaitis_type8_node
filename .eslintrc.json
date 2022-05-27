@@ -13,6 +13,7 @@
     "no-console": "off",
     "linebreak-style": 0,
     "import/extensions": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "comma-dangle": "off"
   }
 }

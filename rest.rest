@@ -1,13 +1,11 @@
 ###==================================users
-GET http://localhost:3007/users/
-###
 POST http://localhost:3007/register
 Content-Type: application/json
 
 {
-  "full_name": "test four",
-  "email": "test@four.com",
-  "password": "test4"
+  "full_name": "test five",
+  "email": "test@five.com",
+  "password": "test5"
 }
 ###
 POST http://localhost:3007/login
@@ -23,7 +21,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIyLCJpY
 ###
 POST http://localhost:3007/accounts/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIyLCJpYXQiOjE2NTM2NTI0MzcsImV4cCI6MTY1MzY1NjAzN30.5Yx4F96l88PZsEmINufdjkhCBUUE8NwGTKp951H9z70
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIyLCJpYXQiOjE2NTM2Njg5MDcsImV4cCI6MTY1MzY3MjUwN30.mMT9WDzffGuuTCld4uBRFPw5mKVB4WQUJTK-D54ALTQ
 
 {
   "group_id": 1

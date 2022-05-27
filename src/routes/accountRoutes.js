@@ -1,43 +1,13 @@
 const express = require('express');
 const { validateToken } = require('../middleware');
-const { saveAccountDb, findAccountsById } = require('../model/accountModel');
+const controller = require('../controllers/accountController');
 
 const accountRoutes = express.Router();
 
-// GET
-accountRoutes.get('/accounts', validateToken, async (req, res) => {
-  try {
-    const usersArr = await findAccountsById(req.userId);
-    res.json(usersArr);
-  } catch (error) {
-    console.log('error===', error);
-    res.sendStatus(500);
-  }
-});
+// GET accounts(groups)
+accountRoutes.get('/accounts', validateToken, controller.getAccounts);
 
 // POST account
-accountRoutes.post('/accounts', validateToken, async (req, res) => {
-  // console.log('userId ===', req.userId);
-  const newAccount = {
-    group_id: req.body.group_id,
-    user_id: req.userId,
-  };
-  console.log('newAccount ===', newAccount);
-  // res.json('trying to create an account');
-  try {
-    const saveResult = await saveAccountDb(
-      newAccount.group_id,
-      newAccount.user_id
-    );
-    if (saveResult.affectedRows === 1) {
-      res.sendStatus(201);
-      return;
-    }
-    res.status(400).json('no account created');
-  } catch (error) {
-    console.log('POST /accounts ===', error);
-  }
-  res.sendStatus(500);
-});
+accountRoutes.post('/accounts', validateToken, controller.createAccount);
 
 module.exports = accountRoutes;
