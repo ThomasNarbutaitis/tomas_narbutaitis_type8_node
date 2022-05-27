@@ -5,8 +5,10 @@ const { jwtSecret } = require('./config');
 async function validateUserRegister(req, res, next) {
   const schema = Joi.object({
     full_name: Joi.string().trim().min(5).required(),
-    email: Joi.string().trim().email().lowercase().required(),
-    password: Joi.string().trim().min(5).max(15).required(),
+    email: Joi.string().trim().email().lowercase()
+      .required(),
+    password: Joi.string().trim().min(5).max(15)
+      .required(),
   });
   try {
     await schema.validateAsync(req.body, { abortEarly: false });
@@ -23,8 +25,10 @@ async function validateUserRegister(req, res, next) {
 
 async function validateUserLogin(req, res, next) {
   const schema = Joi.object({
-    email: Joi.string().trim().email().lowercase().required(),
-    password: Joi.string().trim().min(5).max(15).required(),
+    email: Joi.string().trim().email().lowercase()
+      .required(),
+    password: Joi.string().trim().min(5).max(15)
+      .required(),
   });
   try {
     await schema.validateAsync(req.body, { abortEarly: false });

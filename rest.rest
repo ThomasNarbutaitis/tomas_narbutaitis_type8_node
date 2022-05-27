@@ -5,27 +5,37 @@ POST http://localhost:3007/register
 Content-Type: application/json
 
 {
-  "full_name": "test one",
-  "email": "test@one.com",
-  "password": "test1"
+  "full_name": "test four",
+  "email": "test@four.com",
+  "password": "test4"
 }
 ###
 POST http://localhost:3007/login
 Content-Type: application/json
 
 {
-  "email": "test@one.com",
-  "password": "test1"
+  "email": "test@four.com",
+  "password": "test4"
 }
 ###==================================accounts
 GET http://localhost:3007/accounts/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE5LCJpYXQiOjE2NTM2MzI1MTEsImV4cCI6MTY1MzYzNjExMX0.UQtftszlYSI7VZmYr-KpCcJnnXx1LCpJ35c7jCewKcM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIyLCJpYXQiOjE2NTM2NTI0MzcsImV4cCI6MTY1MzY1NjAzN30.5Yx4F96l88PZsEmINufdjkhCBUUE8NwGTKp951H9z70
 ###
 POST http://localhost:3007/accounts/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE5LCJpYXQiOjE2NTM2MzI1MTEsImV4cCI6MTY1MzYzNjExMX0.UQtftszlYSI7VZmYr-KpCcJnnXx1LCpJ35c7jCewKcM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIyLCJpYXQiOjE2NTM2NTI0MzcsImV4cCI6MTY1MzY1NjAzN30.5Yx4F96l88PZsEmINufdjkhCBUUE8NwGTKp951H9z70
 
 {
-  "group_id": 3
+  "group_id": 1
  }
-###
+###===================================bills
+POST http://localhost:3007/bills/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIyLCJpYXQiOjE2NTM2NTUwMTIsImV4cCI6MTY1MzY1ODYxMn0.BLtNnjgUquTAK5_GsZmxmtCXO4COTiJyBp9ZiMR4sNA
+
+{
+  "group_id": 5,
+  "amount": 290,
+  "description": "sauna"
+ }
+ ###

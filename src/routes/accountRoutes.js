@@ -36,14 +36,8 @@ accountRoutes.post('/accounts', validateToken, async (req, res) => {
     res.status(400).json('no account created');
   } catch (error) {
     console.log('POST /accounts ===', error);
-    if (error.code === 'ER_DUP_ENTRY') {
-      res.status(400).json('account alredy exists');
-      return;
-    }
-    res.sendStatus(500);
   }
+  res.sendStatus(500);
 });
 
-module.exports = {
-  accountRoutes,
-};
+module.exports = accountRoutes;

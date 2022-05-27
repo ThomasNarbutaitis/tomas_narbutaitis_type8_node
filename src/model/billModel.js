@@ -15,17 +15,12 @@ async function executeDb(sql, dataToDbArr = []) {
   }
 }
 
-function saveAccountDb(group_id, user_id) {
-  const sql = 'INSERT INTO accounts (group_id, user_id) VALUES (?, ?)';
-  return executeDb(sql, [group_id, user_id]);
-}
-
-function findAccountsById(id) {
-  const sql = 'SELECT groups.id, groups.name FROM accounts LEFT JOIN groups ON accounts.group_id = groups.id WHERE user_id = ?';
-  return executeDb(sql, [id]);
+function saveBillDb(group_id, amount, description) {
+  const sql =
+    'INSERT INTO bills (group_id, amount, description) VALUES (?, ?, ?)';
+  return executeDb(sql, [group_id, amount, description]);
 }
 
 module.exports = {
-  saveAccountDb,
-  findAccountsById,
+  saveBillDb,
 };

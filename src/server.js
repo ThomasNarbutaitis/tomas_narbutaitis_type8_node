@@ -3,7 +3,8 @@ const morgan = require('morgan');
 const cors = require('cors');
 const { PORT } = require('./config');
 const userRoutes = require('./routes/userRoutes');
-const { accountRoutes } = require('./routes/accountRoutes');
+const accountRoutes = require('./routes/accountRoutes');
+const billRoutes = require('./routes/billRoutes');
 
 const app = express();
 
@@ -19,5 +20,6 @@ app.get('/', (req, res) => {
 // Routes
 app.use('/', userRoutes);
 app.use('/', accountRoutes);
+app.use('/', billRoutes);
 
 app.listen(PORT, () => console.log('Server is runnin on port', PORT));
