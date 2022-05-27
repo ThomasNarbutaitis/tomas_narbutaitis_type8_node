@@ -1,4 +1,6 @@
 const Joi = require('joi');
+const jwt = require('jsonwebtoken');
+const { jwtSecret } = require('./config');
 
 async function validateUserRegister(req, res, next) {
   const schema = Joi.object({
@@ -37,7 +39,34 @@ async function validateUserLogin(req, res, next) {
   }
 }
 
+async function validateToken(req, res, next) {
+  const tokenFromHeaders = req.headers.authorization?.split(' ')[1];
+  // nera token
+  if (!tokenFromHeaders) {
+    res.status(401).json({
+      success: false,
+      error: 'no token',
+    });
+    return;
+  }
+  // token yra
+  try {
+    const tokenPayload = jwt.verify(tokenFromHeaders, jwtSecret);
+    const { userId } = tokenPayload;
+    req.userId = userId;
+    next();
+  } catch (error) {
+    console.log('error verifyRezult ===', error);
+    // token not valid
+    res.status(403).json({
+      success: false,
+      error: 'invalid token',
+    });
+  }
+}
+
 module.exports = {
   validateUserRegister,
   validateUserLogin,
+  validateToken,
 };

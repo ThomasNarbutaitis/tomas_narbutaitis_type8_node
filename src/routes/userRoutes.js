@@ -32,7 +32,7 @@ userRoutes.post('/register', validateUserRegister, async (req, res) => {
     const saveResult = await saveUserDb(
       newUser.full_name,
       newUser.email,
-      newUser.password
+      newUser.password,
     );
     if (saveResult.affectedRows === 1) {
       res.sendStatus(201);
