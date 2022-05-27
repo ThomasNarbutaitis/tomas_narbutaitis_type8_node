@@ -26,6 +26,6 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE5LCJpYXQiOjE2NTM2MzI1MTEsImV4cCI6MTY1MzYzNjExMX0.UQtftszlYSI7VZmYr-KpCcJnnXx1LCpJ35c7jCewKcM
 
 {
-  "group_id": 1
+  "group_id": 3
  }
 ###

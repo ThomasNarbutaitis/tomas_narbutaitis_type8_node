@@ -20,6 +20,12 @@ function saveAccountDb(group_id, user_id) {
   return executeDb(sql, [group_id, user_id]);
 }
 
+function findAccountsById(id) {
+  const sql = 'SELECT * FROM accounts WHERE user_id = ?';
+  return executeDb(sql, [id]);
+}
+
 module.exports = {
   saveAccountDb,
+  findAccountsById,
 };

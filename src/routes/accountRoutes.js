@@ -1,13 +1,21 @@
 const express = require('express');
 const { validateToken } = require('../middleware');
-const { saveAccountDb } = require('../model/accountModel');
+const { saveAccountDb, findAccountsById } = require('../model/accountModel');
 
 const accountRoutes = express.Router();
 
+// GET
 accountRoutes.get('/accounts', validateToken, async (req, res) => {
-  res.json('trying to get accounts');
+  try {
+    const usersArr = await findAccountsById(req.userId);
+    res.json(usersArr);
+  } catch (error) {
+    console.log('error===', error);
+    res.sendStatus(500);
+  }
 });
 
+// POST account
 accountRoutes.post('/accounts', validateToken, async (req, res) => {
   // console.log('userId ===', req.userId);
   const newAccount = {
