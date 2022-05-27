@@ -21,6 +21,12 @@ function saveBillDb(group_id, amount, description) {
   return executeDb(sql, [group_id, amount, description]);
 }
 
+function findBillsByGroupId(group_id) {
+  const sql = 'SELECT * FROM bills WHERE group_id = ?';
+  return executeDb(sql, [group_id]);
+}
+
 module.exports = {
   saveBillDb,
+  findBillsByGroupId,
 };

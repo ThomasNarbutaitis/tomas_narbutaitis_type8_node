@@ -38,4 +38,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIyLCJpY
   "amount": 290,
   "description": "sauna"
  }
- ###
+###
+GET http://localhost:3007/bills/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIyLCJpYXQiOjE2NTM2NTc0NzUsImV4cCI6MTY1MzY2MTA3NX0.H4vgP4Mz7FB3YXEaRP5XGiM9WzgT1CxdV4A86uCHs54
+###
