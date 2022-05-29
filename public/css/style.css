@@ -146,3 +146,32 @@ h4 {
   background-color: rgba(19, 191, 109, 0.767);
   transform: scale(1.1);
 }
+
+/* ========================================Bills */
+.h2-normal {
+  font-weight: 300;
+}
+
+table {
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 12px;
+}
+
+tr {
+  font-size: 20px;
+}
+
+tr:nth-child(odd) {
+  background-color: #777;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.767);
+}
