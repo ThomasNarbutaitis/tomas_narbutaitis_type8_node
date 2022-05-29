@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Split Bill | Login</title>
   <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/login.js" defer></script>
 </head>
 
 <body>
@@ -29,12 +30,13 @@
         <p>BEST IN MARKET</p>
       </div>
       <div class="form-box">
-        <form>
+        <form id="login">
           <h3>Login</h3>
+          <h3 id="err"></h3>
           <label for="email">Email</label>
           <input type="email" name="email" id="email">
-          <label for="pass">Password</label>
-          <input type="password" name="pass" id="pass">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password">
           <button class="btn primary" type="submit">Login</button>
           <p>Don't have an account? <a href="./register.html">Register</a></p>
 
