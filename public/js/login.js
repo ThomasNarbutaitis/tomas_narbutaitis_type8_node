@@ -27,7 +27,7 @@ formEl.addEventListener('submit', async (event) => {
     email: formEl.elements.email.value.trim(),
     password: formEl.elements.password.value.trim(),
   };
-  console.log('loginObj ===', loginObj);
+  // console.log('loginObj ===', loginObj);
   const resp = await fetch(`${BASE_URL}/login`, {
     method: 'POST',
     headers: {

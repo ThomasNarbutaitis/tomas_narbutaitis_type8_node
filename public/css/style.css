@@ -105,6 +105,7 @@ input {
 .btn:hover {
   color: #333;
   background-color: rgba(19, 191, 109, 0.767);
+  cursor: pointer;
 }
 
 .error-field {
@@ -145,10 +146,11 @@ h4 {
 .card:hover {
   background-color: rgba(19, 191, 109, 0.767);
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 /* ========================================Bills */
-.h2-normal {
+.group-name {
   font-weight: 300;
 }
 
@@ -157,6 +159,7 @@ table {
   border-collapse: collapse;
   width: 100%;
   text-align: left;
+  margin-bottom: 4rem;
 }
 
 th,
