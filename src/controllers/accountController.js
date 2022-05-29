@@ -1,8 +1,7 @@
 const {
   getGroupsById,
-  findAccountByGroupId,
-  findAccountByUserId,
   saveAccountDb,
+  findAccountByUserAndGroupId,
 } = require('../model/accountModel');
 
 const getAccounts = async (req, res) => {
@@ -23,11 +22,11 @@ const createAccount = async (req, res) => {
   };
   console.log('newAccount ===', newAccount);
   try {
-    if (
-      // eslint-disable-next-line operator-linebreak
-      (await findAccountByGroupId(newAccount.group_id)) &&
-      (await findAccountByUserId(newAccount.user_id))
-    ) {
+    const checkAccount = await findAccountByUserAndGroupId(
+      newAccount.user_id,
+      newAccount.group_id
+    );
+    if (checkAccount.length > 0) {
       res.status(400).json('Account already exists');
       return;
     }

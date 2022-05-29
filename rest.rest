@@ -12,8 +12,8 @@ POST http://localhost:3007/login
 Content-Type: application/json
 
 {
-  "email": "test@four.com",
-  "password": "test4"
+  "email": "test@six.com",
+  "password": "test6"
 }
 ###==================================accounts
 GET http://localhost:3007/accounts/
@@ -21,10 +21,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIyLCJpY
 ###
 POST http://localhost:3007/accounts/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIyLCJpYXQiOjE2NTM2Njg5MDcsImV4cCI6MTY1MzY3MjUwN30.mMT9WDzffGuuTCld4uBRFPw5mKVB4WQUJTK-D54ALTQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI0LCJpYXQiOjE2NTM4NTI2MjIsImV4cCI6MTY1Mzg1NjIyMn0.4KLOdsj6s7pT9zg_etgOGqnEwOzawHPFW34aFWqEAFU
 
 {
-  "group_id": 1
+  "group_id": 4
  }
 ###===================================bills
 POST http://localhost:3007/bills/

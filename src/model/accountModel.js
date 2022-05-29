@@ -25,19 +25,13 @@ function getGroupsById(id) {
   return executeDb(sql, [id]);
 }
 
-function findAccountByGroupId(group_id) {
-  const sql = 'SELECT * FROM accounts WHERE group_id = ?';
-  return executeDb(sql, [group_id]);
-}
-
-function findAccountByUserId(user_id) {
-  const sql = 'SELECT * FROM accounts WHERE user_id = ?';
-  return executeDb(sql, [user_id]);
+function findAccountByUserAndGroupId(user_id, group_id) {
+  const sql = 'SELECT * FROM accounts WHERE user_id = ? AND group_id = ?';
+  return executeDb(sql, [user_id, group_id]);
 }
 
 module.exports = {
   saveAccountDb,
   getGroupsById,
-  findAccountByGroupId,
-  findAccountByUserId,
+  findAccountByUserAndGroupId,
 };

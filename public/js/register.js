@@ -17,8 +17,7 @@ function handleError(msg) {
 }
 
 function regSuccess() {
-  clearEl.innerHTML =
-    '<p>Already have an account? <a href="./login.html">Login</a></p>';
+  clearEl.innerHTML = '<p>Already have an account? <a href="./login.html">Login</a></p>';
 }
 
 async function registerFetch(full_name, email, password) {

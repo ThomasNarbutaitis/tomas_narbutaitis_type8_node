@@ -1,6 +1,7 @@
 import { getFetch, postFetch } from './modules/fetch.js';
 
 const groupId = window.location.href.split('?')[1];
+// console.log('groupId ===', groupId);
 
 const nameEl = document.querySelector('.group-name');
 const tableEl = document.querySelector('table');
@@ -20,8 +21,9 @@ function renderBills(array, dest) {
 
 async function getBills(userToken) {
   const groupArr = await getFetch('accounts', userToken);
-  const groupName = groupArr[groupId - 1].name;
-  nameEl.textContent = groupName;
+  const groupObj = groupArr.find((obj) => obj.id === Number(groupId));
+  // console.log('groupObj ===', groupObj.name);
+  nameEl.textContent = groupObj.name;
   const billsArr = await getFetch(`bills/${groupId}`, userToken);
   renderBills(billsArr, tableEl);
 }
