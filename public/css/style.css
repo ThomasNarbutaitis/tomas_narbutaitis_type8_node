@@ -128,14 +128,16 @@ h4 {
 .cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 36px;
+  justify-content: center;
 }
 
 .card {
   background-color: #777;
   padding: 24px;
   border-radius: 8px;
-  max-width: 30rem;
+  min-width: 15rem;
+  max-width: 30%;
   transition: transform 0.3s;
   text-align: center;
 }
