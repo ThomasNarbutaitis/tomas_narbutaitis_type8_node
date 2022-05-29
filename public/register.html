@@ -31,18 +31,22 @@
       </div>
       <div class="form-box">
         <h3>Register</h3>
+        <h3 id="err"></h3>
 
-        <form>
-          <label for="name">Full Name</label>
-          <input type="text" name="name" id="name">
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email">
-          <label for="pass">Password</label>
-          <input type="password" name="pass" id="pass">
-          <label for="rep-pass">Repeat Password</label>
-          <input type="rep-password" name="-rep-pass" id="rep-pass">
-          <button class="btn primary" type="submit">Register</button>
-          <p>Already have an account? <a href="./login.html">Login</a></p>
+
+        <div class="to-clear">
+          <form id="register">
+            <label for="full_name">Full Name</label>
+            <input type="text" name="full_name" id="full_name">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+            <label for="rep_password">Repeat Password</label>
+            <input type="password" name="rep_password" id="rep-password">
+            <button class="btn primary" type="submit">Register</button>
+            <p>Already have an account? <a href="./login.html">Login</a></p>
+        </div>
 
         </form>
       </div>

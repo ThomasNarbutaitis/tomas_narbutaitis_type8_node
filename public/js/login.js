@@ -17,7 +17,6 @@ function handleError(msg) {
 
 formEl.addEventListener('submit', async (event) => {
   event.preventDefault();
-  console.log('js submit form');
   if (formEl.elements.email.value.trim() === '') {
     formEl.elements.email.className = 'error-field';
   }
