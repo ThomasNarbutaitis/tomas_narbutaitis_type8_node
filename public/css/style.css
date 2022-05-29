@@ -53,6 +53,10 @@ nav {
   margin-bottom: 1.5rem;
 }
 
+h2 {
+  font-size: 1.8rem;
+}
+
 .logo-box h2,
 p {
   color: rgb(240, 192, 32);
@@ -110,4 +114,33 @@ input {
 
 #err {
   color: rgba(19, 191, 109, 0.767);
+}
+
+/* ==================================Groups page */
+
+h4 {
+  color: rgb(240, 192, 32);
+  font-size: 18px;
+  margin-top: 40px;
+  margin-bottom: 34px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.card {
+  background-color: #777;
+  padding: 24px;
+  border-radius: 8px;
+  max-width: 30rem;
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.card:hover {
+  background-color: rgba(19, 191, 109, 0.767);
+  transform: scale(1.1);
 }
