@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Split Bill | Bills</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="module" src="./js/bills.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="container">
+        <a href="./login.html">Login</a>
+        <a href="./register.html">Register</a>
+        <a href="./groups.html">Groups</a>
+        <a href="./bills.html" class="active">Bills</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="central-box">
+      <div class="logo-box">
+        <i><img
+            src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-bill-online-money-service-flaticons-lineal-color-flat-icons.png" /></i>
+        <h2>Split Bill</h2>
+        <h2 class="group-name">Trip name</h2>
+        <p>Group's bills:</p>
+      </div>
+
+    </div>
+    <div class="container">
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Description</th>
+          <th>Amount</th>
+        </tr>
+
+      </table>
+    </div>
+    <div class="central-box">
+      <div class="form-box">
+        <form id="add-bill">
+          <h3>Add Bill</h3>
+          <h3 id="err"></h3>
+          <label for="amount">Amount</label>
+          <input type="number" name="amount" id="amount" required>
+          <label for="descr">Description</label>
+          <input type="text" name="descr" id="descr" required>
+          <button class="btn primary" type="submit">Add</button>
+
+
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

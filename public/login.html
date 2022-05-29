@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Split Bill | Login</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/login.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="container">
+        <a href="./login.html" class="active">Login</a>
+        <a href="./register.html">Register</a>
+        <a href="./groups.html">Groups</a>
+        <a href="./bills.html">Bills</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="central-box">
+      <div class="logo-box">
+        <i><img
+            src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-bill-online-money-service-flaticons-lineal-color-flat-icons.png" /></i>
+        <h2>Split Bill</h2>
+        <p>BEST IN MARKET</p>
+      </div>
+      <div class="form-box">
+        <form id="login">
+          <h3>Login</h3>
+          <h3 id="err"></h3>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password">
+          <button class="btn primary" type="submit">Login</button>
+          <p>Don't have an account? <a href="./register.html">Register</a></p>
+
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
